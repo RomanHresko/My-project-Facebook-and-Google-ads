@@ -46,7 +46,7 @@ SELECT
     )
 FROM regexp_matches($1, '&[0-9a-f][0-9a-f]|.', 'gi') AS r(m);
 $$ LANGUAGE SQL IMMUTABLE STRICT;
--- Декодування значення utm_campaign за допомогою створення тимчасової функції
+
 
 
 -- Робота з датами і часом та віконні функції
