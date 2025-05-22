@@ -1,14 +1,14 @@
 WITH non_null_gf AS 
 (WITH gf AS (SELECT ad_date, url_parameters, campaign_id, 'facebook ads' AS media_source, spend, impressions, reach, clicks, leads, value
 FROM facebook_ads_basic_daily
-UNION ALL
+UNION ALL  -- об'єднання значень (з врахуванням тих що повторюються)
 SELECT ad_date, url_parameters, campaign_name AS campaign_id, 'google ads' AS media_source, spend,  impressions, reach, clicks, leads,  value
     FROM google_ads_basic_daily gabd)
     SELECT 
     ad_date,
     url_parameters,
     media_source,
-   	COALESCE(spend, 0) AS spend,
+   	COALESCE(spend, 0) AS spend,              --прибираємо NULL замінюємо на 0
    	COALESCE(impressions, 0) AS impressions,
    	COALESCE(reach, 0) AS reach,
     COALESCE(clicks, 0) AS clicks,
@@ -91,7 +91,7 @@ SELECT ad_date, url_parameters, campaign_name AS campaign_id, 'google ads' AS me
     cpm,
     ctr,
     romi,
-   lag(cpc, 1) OVER(PARTITION BY utm_campaign ORDER BY ad_month) AS previous_cpc,
+   lag(cpc, 1) OVER(PARTITION BY utm_campaign ORDER BY ad_month) AS previous_cpc, 
    lag(cpm, 1) OVER(PARTITION BY utm_campaign ORDER BY ad_month) AS previous_cpm,
    lag(ctr, 1) OVER(PARTITION BY utm_campaign ORDER BY ad_month) AS previous_ctr,
    lag(romi, 1) OVER(PARTITION BY utm_campaign ORDER BY ad_month) AS previous_romi
