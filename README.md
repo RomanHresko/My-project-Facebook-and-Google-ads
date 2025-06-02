@@ -24,3 +24,13 @@
 - SUM, ROUND: агрегатні функції для розрахунків.
 - DATE_TRUNC: виділення потрібної частини дати (YEAR, MONTH, DAY).
 - GROUP BY: групування.
+- OVER  і PARTITION BY, LEAD, LAG, RANK, DENSE_RANK: віконні функції.
+
+
+
+
+## 5. BigQuery 
+1. Запит про події, користувачів та сесії в GA4 за 2021 рік.
+2. Розрахунок конверсій в розрізі дат та каналів трафіку від початку сесії до покупки.
+   Посилання на запит:
+https://console.cloud.google.com/bigquery?sq=135017838998:9cceda3f33c649af90a4ea2235b09fa2&pli=1&inv=1&invt=AbzB-g&project=for-youtube-looker-458011&ws=!1m4!1m3!8m2!1s135017838998!2s9cceda3f33c649af90a4ea2235b09fa2
