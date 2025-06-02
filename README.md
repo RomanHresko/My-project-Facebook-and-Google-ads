@@ -1,5 +1,5 @@
 ##  1. Аналіз рекламних компаній Google та Facebook
-[Переглянь код за посиланням](https://github.com/RomanHresko/SQL/blob/main/SQL)
+[Перегляньте код за посиланням](https://github.com/RomanHresko/SQL/blob/main/SQL)
 
 - Створено запит для отримання інформації про метрики кампаній та наборів оголошень у відповідні дні для Google та Facebook.
 - Об'єднано 2 таблиці за допомогою UNION ALL, далі створено CTE.
